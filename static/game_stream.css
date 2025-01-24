@@ -1,0 +1,105 @@
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+html, body {
+  width: 100%;
+  height: 100%;
+  overflow: auto;
+}
+
+body {
+  background-image: linear-gradient(rgba(23, 23, 23, 0.501), rgba(41, 41, 41, 0.666)), url(peter-rovder-X_5kMOSxLzw-unsplash.jpg);
+  background-position: center;
+  background-size: cover;
+  background-position-y: 25%;
+  background-attachment: fixed;
+  font-family: sans-serif;
+}
+
+/* Header styling */
+.logo-container {
+  padding: 15px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  background: black;
+  box-shadow: 2px 2px 4px rgb(255, 255, 255);
+  position: relative;
+  height: 90px;
+  width: 100%;
+}
+
+/* Left part of the logo */
+.logo-left {
+  font-family: "Orbitron", sans-serif;
+  font-size: 40px;
+  font-weight: 700;
+  color: transparent;
+  text-transform: uppercase;
+  letter-spacing: 2px;
+  background-image: linear-gradient(to right, #00f0ff 50%, #00f0ff 50%);
+  -webkit-background-clip: text;
+  background-clip: text;
+  -webkit-text-fill-color: transparent;
+  text-shadow: -2px 0 5px #00eeff95, -4px 0 10px #00eeff80, -6px 0 15px #00f0ff;
+}
+
+/* Right part of the logo */
+.logo-right {
+  font-family: "Orbitron", sans-serif;
+  font-size: 40px;
+  font-weight: 700;
+  color: transparent;
+  text-transform: uppercase;
+  letter-spacing: 2px;
+  background-image: linear-gradient(to right, #8a2be2 50%, #8a2be2 50%);
+  -webkit-background-clip: text;
+  background-clip: text;
+  -webkit-text-fill-color: transparent;
+  text-shadow: 1px 0 5px #ac33f398, 5px 0 10px #892be295, 6px 0 15px #8a2be2;
+}
+
+/* Centered content section */
+.content {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  text-align: center;
+  height: calc(100vh - 90px); /* Adjusts content height to account for the header */
+}
+
+.content h1 {
+  font-size: 3em;
+  margin-bottom: 20px;
+  color: transparent; 
+  font-family: "Orbitron", sans-serif;
+  background-image: linear-gradient(to right, #00f0ff, #8a2be2); 
+  -webkit-background-clip: text; 
+  background-clip: text; /
+}
+
+
+.content p {
+  font-size: 1.5em;
+  margin-bottom: 40px;
+  color: white;
+}
+
+.back-btn {
+  display: inline-block;
+  padding: 10px 20px;
+  background-color: #007BFF;
+  color: white;
+  text-decoration: none;
+  border-radius: 5px;
+  font-size: 1.2em;
+  transition: background-color 0.3s;
+}
+
+.back-btn:hover {
+  background-color: #0056b3;
+}

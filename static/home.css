@@ -1,0 +1,244 @@
+/* Resetting default margin and padding for all elements, ensuring consistent box-sizing */
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box; 
+}
+
+/* Setting the full width and height for the HTML and body elements */
+html, body {
+  width: 100%;
+  height: 100%;
+  overflow: auto; /* Allows scrolling if content overflows */
+}
+
+/* Styling the scrollbar width and height */
+::-webkit-scrollbar {
+  width: 10px;
+  height: 10px;
+}
+
+/* Styling the scrollbar track (the background area) */
+::-webkit-scrollbar-track {
+  background: rgba(0, 0, 0, 0.1); /* Light gray track background */
+  border-radius: 10px; /* Rounded corners for the track */
+}
+
+/* Styling the scrollbar thumb (the draggable part) */
+::-webkit-scrollbar-thumb {
+  background-image: linear-gradient(to bottom, #00a6ff, #00f0ff, #1ba7ed); /* Vertical gradient */
+  border-radius: 10px; /* Rounded corners for the thumb */
+  border: 3px solid rgba(0, 0, 0, 0.2); /* Adds spacing around the thumb */
+}
+
+/* Changes scrollbar thumb color on hover */
+::-webkit-scrollbar-thumb:hover {
+  background-image: linear-gradient(to right, #1ba7ed, #00a6ff); /* Horizontal gradient */
+}
+
+/* Styling the scrollbar corner where vertical and horizontal scrollbars meet */
+::-webkit-scrollbar-corner {
+  background: rgba(0, 0, 0, 0.2); 
+}
+
+/* Setting background properties for the page */
+body {
+  background-image: linear-gradient(rgba(23, 23, 23, 0.541), rgba(41, 41, 41, 0.666)), url(websitebg.png);
+  background-position: center; /* Centers the background */
+  background-size: cover; /* Ensures the background covers the whole screen */
+  background-position-y: 25%; /* Moves the background image slightly up */
+  background-attachment: fixed; /* Keeps the background fixed when scrolling */
+  font-family: sans-serif; /* Sets the default font */
+}
+
+/* Making the main content flexible */
+.main-content {
+  flex: 1; /* Expands to fill available space */
+}
+
+/* Styling the logo container at the top of the page */
+.logo-container {
+  padding: 15px;
+  display: flex; /* Aligns children in a row */
+  align-items: center; /* Centers children vertically */
+  justify-content: center; /* Centers children horizontally */
+  background: black; /* Black background */
+  box-shadow: 2px 2px 4px rgb(255, 255, 255); /* Adds a subtle shadow around the container */
+  position: relative;
+  height: 90px;
+  width: 100%;
+}
+
+/* Left part of the logo with gradient styling */
+.logo-left {
+  font-family: "Orbitron", sans-serif; /* Futuristic font */
+  font-size: 40px; /* Large font size */
+  font-weight: 700; /* Bold text */
+  color: transparent; /* Text is invisible but visible through the gradient */
+  text-transform: uppercase; /* Makes all letters uppercase */
+  letter-spacing: 2px; /* Space between letters */
+  background-image: linear-gradient(to right, #00f0ff 50%, #00f0ff 50%);
+  -webkit-background-clip: text; /* Clips the background to the text */
+  background-clip: text; /* Ensures the gradient is applied to the text only */
+  -webkit-text-fill-color: transparent; /* Ensures transparency in unsupported browsers */
+  text-shadow: -2px 0 5px #00eeff95, -4px 0 10px #00eeff80, -6px 0 15px #00f0ff; /* Adds a glowing effect */
+}
+
+/* Right part of the logo with a similar gradient but different colors */
+.logo-right {
+  font-family: "Orbitron", sans-serif;
+  font-size: 40px;
+  font-weight: 700;
+  color: transparent;
+  text-transform: uppercase;
+  letter-spacing: 2px;
+  background-image: linear-gradient(to right, #8a2be2 50%, #8a2be2 50%);
+  -webkit-background-clip: text;
+  background-clip: text;
+  -webkit-text-fill-color: transparent;
+  text-shadow: 1px 0 5px #ac33f398, 5px 0 10px #892be295, 6px 0 15px #8a2be2;
+}
+
+/* Styling the footer section */
+.footer {
+  background-color: #000000;
+  box-shadow: 0 -2px rgb(255, 255, 255); /* Light shadow at the top of the footer */
+  color: #fff;
+  text-align: center;
+  padding: 20px 0;
+  position: relative;
+  width: 100%;
+  bottom: 0;
+}
+
+.footer p {
+  margin: 0;
+  font-size: 16px;
+}
+
+/* Styling for social media links */
+.social-links {
+  margin-top: 10px;
+}
+
+.social-icon {
+  text-decoration: none; /* Removes underline */
+  color: #ffffff;
+  font-size: 18px;
+  margin: 0 15px;
+  transition: color 0.3s ease; /* Smooth transition for hover effects */
+}
+
+.social-icon:hover {
+  color: #00f0ff;
+}
+
+/* Container for the hero section */
+.hero-container {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  height: 100vh;
+  background: rgba(0, 0, 0, 0.5); /* Semi-transparent overlay */
+}
+
+/* Styling for the hero text */
+.hero-text {
+  text-align: center;
+  color: white;
+  max-width: 80%;
+  padding: 20px;
+}
+
+/* Main headline in the hero section */
+.headline {
+  font-size: 60px;
+  font-weight: 700;
+  letter-spacing: 2px;
+  margin-bottom: 20px;
+  color: transparent;
+  text-transform: uppercase;
+  background-image: linear-gradient(to right, #00f0ff, #8a2be2);
+  transition: ease-in-out;
+  transition-duration: 2s;
+  -webkit-background-clip: text;
+  background-clip: text;
+  animation: colorChange 4s ease-in-out infinite; 
+}
+
+/* Keyframes for the gradient animation in the headline */
+@keyframes colorChange {
+  0% {
+    background-image: linear-gradient(to top, #ffffff, #8a2be2); 
+  }
+  25% {
+    background-image: linear-gradient(to top, #ff6347, #ff0088); 
+  }
+  50% {
+    background-image: linear-gradient(to top, #32cd32, #00e1ff); 
+  }
+  75% {
+    background-image: linear-gradient(to top, #ffff00, #ff6347); 
+  }
+  100% {
+    background-image: linear-gradient(to top, #e8e8e8, #8a2be2); 
+  }
+}
+
+/* Subheadline text below the main headline */
+.subheadline {
+  font-size: 20px;
+  color: #ccc;
+  margin-bottom: 30px;
+}
+
+/* Buttons in the hero section */
+.cta-buttons {
+  display: flex;
+  gap: 20px;
+  justify-content: center;
+}
+
+.cta-button {
+  font-size: 18px;
+  padding: 15px 30px;
+  color: #fff;
+  background-color: #5724ef;
+  text-decoration: none;
+  text-transform: uppercase;
+  font-weight: 600;
+  border-radius: 5px;
+  transition: background-color 0.3s ease, transform 0.3s ease; 
+}
+
+.cta-button:hover {
+  background-color: #8a2be2;
+  cursor: pointer;
+  transform: scale(0.95); 
+}
+
+/* Responsive styling for devices with smaller widths */
+@media (max-width: 1024px) {
+  .headline {
+    font-size: 48px;
+  }
+}
+
+@media (max-width: 768px) {
+  .headline {
+    font-size: 36px;
+  }
+  .subheadline {
+    font-size: 18px;
+  }
+}
+
+@media (max-width: 480px) {
+  .headline {
+    font-size: 30px;
+  }
+  .cta-button {
+    padding: 12px 24px;
+    font-size: 16px;
+  }
+}
