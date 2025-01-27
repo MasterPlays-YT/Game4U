@@ -4,7 +4,7 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Game-Page</title>
-    <link rel="stylesheet" href="{{ url_for('static', filename='Game.css') }}">
+    <link rel="stylesheet" href="{{ url_for('static', filename='css/Game.css') }}">
     <link href="https://fonts.googleapis.com/css2?family=Orbitron:wght@400;500;700&display=swap" rel="stylesheet">
 </head>
 <body>
@@ -22,9 +22,9 @@
     <div class="card-container">
         <div class="card">
             <div class="card-image">
-                <img src="{{ url_for('static', filename='block2.jpg') }}" alt="Game 1">
+                <img src="{{ url_for ('static', filename='images/web/block2.jpg') }}" alt="Game 1">
                 <video loop muted autoplay>
-                    <source src="{{ url_for('static', filename='Game1Clip.mp4') }}" type="video/mp4">
+                    <source src="{{ url_for('static', filename='videos/Game1Clip.mp4') }}" type="video/mp4">
                     Your browser does not support the video tag.
                 </video>
             </div>
@@ -37,9 +37,9 @@
 
         <div class="card">
             <div class="card-image">
-                <img src="{{ url_for('static', filename='maze.jpg') }}" alt="Game 2">
+                <img src="{{ url_for('static', filename='images/web/maze.jpg') }}" alt="Game 2">
                 <video loop muted autoplay>
-                    <source src="{{ url_for('static', filename='maze.mp4') }}" type="video/mp4">
+                    <source src="{{ url_for('static', filename='videos/maze.mp4') }}" type="video/mp4">
                     Your browser does not support the video tag.
                 </video>
             </div>
@@ -52,9 +52,9 @@
 
         <div class="card">
             <div class="card-image">
-                <img src="{{ url_for('static', filename='snake.jpeg') }}" alt="Game 3">
+                <img src="{{ url_for('static', filename='images/web/snake.jpeg') }}" alt="Game 3">
                 <video loop muted autoplay>
-                    <source src="{{ url_for('static', filename='snake.mp4') }}" type="video/mp4">
+                    <source src="{{ url_for('static', filename='videos/snake.mp4') }}" type="video/mp4">
                     Your browser does not support the video tag.
                 </video>
             </div>
@@ -67,9 +67,9 @@
 
         <div class="card">
             <div class="card-image">
-                <img src="{{ url_for('static', filename='car.webp') }}" alt="Game 4">
+                <img src="{{ url_for('static', filename='images/web/car.webp') }}" alt="Game 4">
                 <video loop muted autoplay>
-                    <source src="{{ url_for('static', filename='car.mp4') }}" type="video/mp4">
+                    <source src="{{ url_for('static', filename='videos/car.mp4') }}" type="video/mp4">
                     Your browser does not support the video tag.
                 </video>
             </div>

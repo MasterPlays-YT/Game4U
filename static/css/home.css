@@ -43,7 +43,7 @@ html, body {
 
 /* Setting background properties for the page */
 body {
-  background-image: linear-gradient(rgba(23, 23, 23, 0.541), rgba(41, 41, 41, 0.666)), url(websitebg.png);
+  background-image: linear-gradient(rgba(23, 23, 23, 0.541), rgba(41, 41, 41, 0.666)), url("../images/web/websitebg.png");
   background-position: center; /* Centers the background */
   background-size: cover; /* Ensures the background covers the whole screen */
   background-position-y: 25%; /* Moves the background image slightly up */

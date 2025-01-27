@@ -1,5 +1,6 @@
 import pygame
 import random
+import os
 
 # Initialize pygame
 pygame.init()
@@ -30,13 +31,13 @@ score = 0
 background_speed = 8
 
 # Load images
-car_img = pygame.image.load('car2.png')
+car_img = pygame.image.load(os.path.join('static', 'images', 'highway', 'car2.png'))
 car_img = pygame.transform.scale(car_img, (car_width, car_height))
 
 enemy_cars = [
-    {'image': pygame.image.load('enemycar.png'), 'speed': random.randint(5, 5)},
-    {'image': pygame.image.load('enemycar2.png'), 'speed': random.randint(7, 10)},
-    {'image': pygame.image.load('enemycar3.png'), 'speed': random.randint(6, 6)}
+    {'image': pygame.image.load(os.path.join('static', 'images', 'highway', 'enemycar.png')), 'speed': random.randint(5, 5)},
+    {'image': pygame.image.load(os.path.join('static', 'images', 'highway', 'enemycar2.png')), 'speed': random.randint(7, 10)},
+    {'image': pygame.image.load(os.path.join('static', 'images', 'highway', 'enemycar3.png')), 'speed': random.randint(6, 6)}
 ]
 
 enemy_cars = [
@@ -44,7 +45,7 @@ enemy_cars = [
     for car in enemy_cars
 ]
 
-background_img = pygame.image.load('road_0.png')
+background_img = pygame.image.load(os.path.join('static', 'images', 'highway', 'road_0.png'))
 background_img = pygame.transform.scale(background_img, (width, height + 100))
 
 clock = pygame.time.Clock()

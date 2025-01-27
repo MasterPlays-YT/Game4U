@@ -2,6 +2,7 @@ from flask import Flask, render_template, redirect, url_for
 import subprocess
 import sys
 import threading
+import os
 
 app = Flask(__name__)
 
@@ -35,27 +36,25 @@ def play_game(game_name):
         return f"An error occurred while trying to start the game: {e}"
 
 def start_blockdodge():
-    subprocess.run([sys.executable, "game.py"])
+    game_script_path = os.path.join('Games', 'game.py')
+    subprocess.run([sys.executable, game_script_path])
 
 def start_maze():
-    subprocess.run([sys.executable, "maze.py"])
+    game_script_path2 = os.path.join('Games', 'maze.py')
+    subprocess.run([sys.executable, game_script_path2])
 
 def start_snake():
-    subprocess.run([sys.executable, "Snake.py"])
+    game_script_path3 = os.path.join('Games', 'Snake.py')
+    subprocess.run([sys.executable, game_script_path3])
 
 def start_car():
-    subprocess.run([sys.executable, "game2.py"])
+    game_script_path4 = os.path.join('Games', 'game2.py')
+    subprocess.run([sys.executable, game_script_path4])
 
 @app.route('/game_stream/<game_name>')
 def game_stream(game_name):
     return render_template('game_stream.html', game_name=game_name)
 
-@app.route('/stop_game')
-def stop_game():
-    # Stop game logic here, like closing game windows or killing game processes
-    # You can kill the game process if needed using subprocess or other techniques
-    # Example: subprocess.Popen("taskkill /F /IM game.exe")
-    return redirect(url_for('Game'))  # Redirect back to the home page
 
 if __name__ == '__main__':
     app.run(debug=True)

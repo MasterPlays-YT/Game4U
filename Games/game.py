@@ -1,6 +1,7 @@
 import pygame
 import time
 import random
+import os
 
 pygame.font.init()
 
@@ -8,7 +9,8 @@ WIDTH, HEIGHT = 1000, 800
 WIN = pygame.display.set_mode((WIDTH, HEIGHT))
 pygame.display.set_caption("Block Dodge")
 
-BG = pygame.transform.scale(pygame.image.load("blockdodge.jpg"), (WIDTH, HEIGHT +290))
+BG = pygame.transform.scale(pygame.image.load(os.path.join('static', 'images', 'blockdodge', 'blockdodge.jpg')), (WIDTH, HEIGHT + 290))
+
 
 PLAYER_WIDTH = 40
 PLAYER_HEIGHT = 60
