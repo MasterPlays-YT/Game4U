@@ -16,8 +16,9 @@ html, body {
 }
 
 ::-webkit-scrollbar-track {
-  background: rgba(0, 0, 0, 0.1);
+  background: rgba(0, 0, 0, 0);
   border-radius: 10px;
+
 }
 
 ::-webkit-scrollbar-thumb {
@@ -35,12 +36,18 @@ html, body {
 }
 
 body {
+  min-height: 100vh;
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+  width: 100%;
+  overflow: auto;
+  font-family: sans-serif;
   background-image: linear-gradient(rgba(23, 23, 23, 0.6), rgba(41, 41, 41, 0.783)), url("../images/web/peter-rovder-X_5kMOSxLzw-unsplash.jpg");
   background-position: center;
   background-size: cover;
   background-position-y: 25%;
   background-attachment: fixed;
-  font-family: sans-serif;
 }
 
 .navbar {
@@ -52,9 +59,10 @@ body {
   box-shadow: 2px 2px 4px rgb(255, 255, 255);
   background-size: cover;
   background-position: center;
-  position: relative;
+  position:relative ;
   height: 90px;
   width: 100%;
+  margin-bottom: -50%;
 }
 
 .logo-container {
@@ -146,10 +154,11 @@ body {
   box-shadow: 0 -2px rgb(255, 255, 255);
   color: #fff;
   text-align: center;
-  padding: 20px;
-  position: relative;
+  padding: 20px 10px;
   width: 100%;
-  bottom: -15px;
+  margin-bottom: -80%;
+  margin-top: -50%;
+  
 }
 
 .footer p {
@@ -165,7 +174,7 @@ body {
   text-decoration: none;
   color: #ffffff;
   font-size: 18px;
-  margin: 0 15px;
+  margin: 0 10px;
   transition: color 0.3s ease;
 }
 
@@ -180,6 +189,10 @@ body {
   color: white;
   font-family: "Orbitron", sans-serif;
   text-align: center;
+  margin-top: 20%;
+  margin-bottom: 20%;
+  
+  
 }
 
 .about-title {
@@ -194,10 +207,71 @@ body {
 .about-content {
   font-size: 18px;
   line-height: 1.8;
-  margin-bottom: 15px;
   text-align: justify;
+  
 }
 
 .about-content strong {
   color: #00f0ff;
 }
+
+/* Responsive adjustments for mobile */
+@media (max-width: 768px) {
+  .navbar {
+    flex-direction: column;
+    height: auto;
+    padding: 10px;
+  }
+
+  .navbar ul {
+    flex-direction: row;
+    padding: 0;
+    gap: 25px;
+  }
+
+  .navbar ul li {
+    margin: 10px;
+    margin-top: 5%;
+    position: relative;
+  }
+
+  .logo-left,
+  .logo-right {
+    font-size: 28px; /* Slightly smaller logos */
+    text-align: center;
+  }
+
+  .about-section {
+    padding: 20px 10px;
+  }
+
+  .about-title {
+    font-size: 28px;
+  }
+
+  .about-content {
+    font-size: 13px;
+    line-height: 1.6;
+  }
+
+  .footer {
+    font-size: 14px;
+    padding: 15px;
+  }
+
+  .social-icon {
+    font-size: 16px;
+    
+  }
+
+  
+  body::-webkit-scrollbar {
+    display: none;
+  }
+  body {
+    -ms-overflow-style: none;  
+    scrollbar-width: none;     
+  }
+}
+
+

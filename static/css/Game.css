@@ -6,8 +6,16 @@
 
 html, body {
   width: 100%;
-  height: 100%;
-  overflow: auto;
+  min-height: 100vh;
+  overflow-x: hidden;
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+  background-image: linear-gradient(rgba(23, 23, 23, 0.501), rgba(41, 41, 41, 0.666)), url("../images/web/peter-rovder-X_5kMOSxLzw-unsplash.jpg");
+  background-position: center 25%;
+  background-size: cover;
+  background-attachment: fixed;
+  font-family: sans-serif;
 }
 
 ::-webkit-scrollbar {
@@ -34,78 +42,24 @@ html, body {
   background: rgba(0, 0, 0, 0.2);
 }
 
-.footer {
-  background-color: #000000;
-  box-shadow: 0 -2px rgb(255, 255, 255);
-  color: #fff;
-  text-align: center;
-  padding: 20px 0;
-  position: relative;
-  width: 100%;
-  bottom: 0;
-}
-
-.footer p {
-  margin: 0;
-  font-size: 16px;
-}
-
-.social-links {
-  margin-top: 10px;
-}
-
-.social-icon {
-  text-decoration: none;
-  color: #ffffff;
-  font-size: 18px;
-  margin: 0 15px;
-  transition: color 0.3s ease;
-}
-
-.social-icon:hover {
-  color: #00f0ff;
-}
-
-body {
-  background-image: linear-gradient(rgba(23, 23, 23, 0.501), rgba(41, 41, 41, 0.666)), url("../images/web/peter-rovder-X_5kMOSxLzw-unsplash.jpg");
-  background-position: center;
-  background-size: cover;
-  background-position-y: 25%;
-  background-attachment: fixed;
-  font-family: sans-serif;
-}
-
+/* Navbar */
 .navbar {
-  padding: 15px;
+  padding: 15px 20px;
   display: flex;
   align-items: center;
   justify-content: space-between;
   background: black;
   box-shadow: 2px 2px 4px rgb(255, 255, 255);
-  background-size: cover;
-  background-position: center;
+  width: 100%;
   position: relative;
   height: 90px;
-  width: 100%;
 }
 
 .logo-container {
   flex-shrink: 0;
 }
 
-.logo-left {
-  font-family: "Orbitron", sans-serif;
-  font-size: 40px;
-  font-weight: 700;
-  color: transparent;
-  text-transform: uppercase;
-  letter-spacing: 2px;
-  background-image: linear-gradient(to right, #00f0ff 50%, #00f0ff 50%);
-  -webkit-background-clip: text;
-  background-clip: text;
-  text-shadow: -2px 0 5px #00eeff95, -4px 0 10px #00eeff80, -6px 0 15px #00f0ff;
-}
-
+.logo-left,
 .logo-right {
   font-family: "Orbitron", sans-serif;
   font-size: 40px;
@@ -113,19 +67,30 @@ body {
   color: transparent;
   text-transform: uppercase;
   letter-spacing: 2px;
-  background-image: linear-gradient(to right, #8a2be2 50%, #8a2be2 50%);
-  -webkit-background-clip: text;
   background-clip: text;
+  -webkit-background-clip: text;
+}
+
+.logo-left {
+  background-image: linear-gradient(to right, #00f0ff 50%, #00f0ff 50%);
+  text-shadow: -2px 0 5px #00eeff95, -4px 0 10px #00eeff80, -6px 0 15px #00f0ff;
+}
+
+.logo-right {
+  background-image: linear-gradient(to right, #8a2be2 50%, #8a2be2 50%);
   text-shadow: 1px 0 5px #ac33f398, 5px 0 10px #892be295, 6px 0 15px #8a2be2;
 }
 
 .navbar ul {
   display: flex;
   list-style: none;
+  margin: 0;
   align-items: center;
   justify-content: center;
   flex-grow: 1;
   gap: 30px;
+  padding-left: -60px;
+  padding-right: 170px;
 }
 
 .navbar ul li {
@@ -133,7 +98,6 @@ body {
   margin: 15px;
   text-align: center;
   position: relative;
-  left: -90px;
 }
 
 .navbar ul li a {
@@ -156,7 +120,7 @@ body {
   height: 3px;
   position: absolute;
   left: 0;
-  bottom: -10px;
+  bottom: -5px;
   background: #1ba7ed;
   transition: width 0.5s ease;
 }
@@ -165,28 +129,28 @@ body {
   width: 100%;
 }
 
+/* Cards */
 .card-container {
   display: flex;
   flex-wrap: wrap;
   justify-content: center;
-  gap: 30px;
-  margin-top: 30px;
-  padding: 0 20px;
+  gap: 50px;
+  padding: 30px 20px;
+  flex-grow: 1;
+  margin-top: 5%;
+  margin-bottom: 5%;
 }
 
 .card {
   display: flex;
-  width: 40%;
-  background: linear-gradient(to right, #ab2525, #2b3ab0); /* Dark Blue to Teal Gradient */
-  background-blend-mode: overlay;
+  width: 45%;
+  background: linear-gradient(to right, #ab2525, #2b3ab0);
   border-radius: 10px;
   border: 3px solid #ffffff;
   box-shadow: 0 4px 8px rgba(0, 221, 255, 0.4);
+  overflow: hidden;
   transition: transform 0.3s ease, box-shadow 0.3s ease;
-  flex-direction: row;
-  margin-bottom: 30px;
 }
-
 
 .card:hover {
   transform: scale(1.05);
@@ -195,30 +159,18 @@ body {
 
 .card-image {
   flex: 1;
-  max-width: 40%;
-  overflow: hidden;
-  border-radius: 10px 0 0 10px;
-  width: 100%;
-  height: auto;
   position: relative;
-}
-
-.card-image img {
-  width: 100%;
-  height: 100%;
-  object-fit: cover;
-  transition: transform 0.3s ease;
+  min-height: 200px;
 }
 
 .card-image img,
 .card-image video {
   position: absolute;
-  top: 0;
-  left: 0;
   width: 100%;
   height: 100%;
-  object-fit: cover;
+  object-fit: contain;
   transition: opacity 0.3s ease;
+  background: black;
 }
 
 .card-image video {
@@ -239,7 +191,7 @@ body {
   padding: 20px;
   display: flex;
   flex-direction: column;
-  justify-content: space-between;
+  justify-content: center;
 }
 
 .card-content h3 {
@@ -247,7 +199,6 @@ body {
   font-size: 24px;
   color: #00eaff;
   margin-bottom: 15px;
-  text-shadow: 2px 2px 5px rgba(0, 221, 255, 0.6);
 }
 
 .card-content p {
@@ -274,8 +225,6 @@ body {
   background: linear-gradient(135deg, #0080ff, #0080ff);
   transform: translateY(-5px);
   box-shadow: 0 8px 15px rgba(0, 221, 255, 0.8);
-  color: #fff;
-  text-shadow: 0 0 8px #00a6ff, 0 0 15px #0f6bec;
 }
 
 .play-now-btn:focus {
@@ -283,11 +232,103 @@ body {
   box-shadow: 0 0 12px rgba(0, 221, 255, 0.9);
 }
 
+.footer {
+  background-color: #000000;
+  box-shadow: 0 -2px rgb(255, 255, 255);
+  color: #fff;
+  text-align: center;
+  padding: 20px 10px;
+  width: 100%;
+}
+
+.footer p {
+  margin: 0;
+  font-size: 16px;
+}
+
+.social-links {
+  margin-top: 10px;
+}
+
+.social-icon {
+  text-decoration: none;
+  color: #ffffff;
+  font-size: 18px;
+  margin: 0 10px;
+  transition: color 0.3s ease;
+}
+
+.social-icon:hover {
+  color: #00f0ff;
+}
+
+/* Responsive */
 @media (max-width: 768px) {
+  .navbar {
+    flex-direction: column;
+    height: auto;
+    padding: 10px;
+  }
+
+  .navbar ul {
+    flex-direction: row;
+    padding: 0;
+    gap: 25px;
+  }
+
+  .navbar ul li {
+    margin: 10px;
+    margin-top: 5%;
+    position: relative;
+  }
+
+  .logo-left,
+  .logo-right {
+    font-size: 28px;
+  }
+
+  .navbar ul {
+    flex-direction: row;
+    gap: 25px;
+  }
+
+  .card-container {
+    flex-direction: column;
+    align-items: center;
+    padding: 20px 10px;
+  }
+
   .card {
     width: 90%;
+    flex-direction: column;
   }
-  .navbar ul li {
-    left: 0px;
+
+  .card-image {
+    height: 200px;
+  }
+
+  .card-content {
+    padding: 15px;
+  }
+
+  .footer {
+    font-size: 14px;
+    padding: 15px;
+  }
+
+  .social-icon {
+    font-size: 16px;
+  }
+
+  html, body {
+    overflow-x: hidden;
+    overflow-y: auto;
+    -ms-overflow-style: none;  
+    scrollbar-width: none;     
+  }
+
+  html::-webkit-scrollbar,
+  body::-webkit-scrollbar {
+    display: none;
   }
 }

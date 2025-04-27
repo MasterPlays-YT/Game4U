@@ -231,6 +231,13 @@ body {
   .subheadline {
     font-size: 18px;
   }
+  body::-webkit-scrollbar {
+    display: none;
+  }
+  body {
+    -ms-overflow-style: none;  
+    scrollbar-width: none;     
+  }
 }
 
 @media (max-width: 480px) {
